@@ -2,8 +2,6 @@ package org.example;
 
 import org.example.mocks.PeopleMock;
 import org.example.mocks.PeopleObject;
-
-import java.util.Comparator;
 import java.util.List;
 
 public class People {
@@ -12,27 +10,27 @@ public class People {
         PeopleMock peopleMock = new PeopleMock();
         List<PeopleObject> peopleObjectList = peopleMock.getPeopleList();
 
-        return peopleObjectList.stream().mapToInt(PeopleObject::getHeight).sum() / peopleObjectList.size();
+        return 1;
     }
 
     public Integer calculateMeanAge(){
         PeopleMock peopleMock = new PeopleMock();
         List<PeopleObject> peopleObjectList = peopleMock.getPeopleList();
 
-        return peopleObjectList.stream().mapToInt(PeopleObject::getAge).sum() / peopleObjectList.size();
+        return 1;
     }
 
     public String youngestPerson(){
         PeopleMock peopleMock = new PeopleMock();
         List<PeopleObject> peopleObjectList = peopleMock.getPeopleList();
 
-        return peopleObjectList.stream().sorted(Comparator.comparingInt(PeopleObject::getAge)).findFirst().get().getName();
+        return "";
     }
 
     public String tallestPerson(){
         PeopleMock peopleMock = new PeopleMock();
         List<PeopleObject> peopleObjectList = peopleMock.getPeopleList();
 
-        return peopleObjectList.stream().sorted(Comparator.comparingInt(PeopleObject::getHeight).reversed()).findFirst().get().getName();
+        return "";
     }
 }
